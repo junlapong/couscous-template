@@ -1,0 +1,109 @@
+---
+currentMenu: home
+---
+# Home
+
+## Usage
+
+To use the template, set it up in your `couscous.yml` configuration file:
+
+```yaml
+template:
+    url: https://github.com/CouscousPHP/Template-Light
+```
+
+## Configuration
+
+Here are all the variables you can set in your `couscous.yml`:
+
+```yaml
+# Base URL of the published website
+baseUrl: http://username.github.io/project
+
+# Used to link to the GitHub project
+github:
+    user: myself
+    repo: my-project
+
+title: My project
+subTitle: This is a great project.
+
+# The left menu bar
+menu:
+    items:
+        home:
+            text: Home page
+            # You can use relative urls
+            relativeUrl: doc/faq.html
+        foo:
+            text: Another link
+            # Or absolute urls
+            absoluteUrl: https://example.com
+```
+
+Note that the menu items can also contain HTML:
+
+```yaml
+home:
+    text: "<i class=\"fa fa-github\"></i> Home page"
+    relativeUrl: doc/faq.html
+```
+
+## Menu
+
+To set the current menu item (i.e. highlighted menu item), set the `currentMenu`
+key in the Markdown files:
+
+```markdown
+---
+currentMenu: home
+---
+
+# Welcome
+```
+
+## Syntax Highlight
+
+```java
+package test;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+import javax.net.ssl.SSLServerSocketFactory;
+
+public class ListCiphers {
+
+    public static void main(String[] args) throws Exception {
+
+        SSLServerSocketFactory ssf = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
+
+        String[] defaultCiphers = ssf.getDefaultCipherSuites();
+        String[] availableCiphers = ssf.getSupportedCipherSuites();
+
+        TreeMap<String, Boolean> ciphers = new TreeMap<String, Boolean>();
+
+        for (int i = 0; i < availableCiphers.length; ++i) {
+            ciphers.put(availableCiphers[i], Boolean.FALSE);
+        }
+
+        for (int i = 0; i < defaultCiphers.length; ++i) {
+            ciphers.put(defaultCiphers[i], Boolean.TRUE);
+        }
+
+        System.out.println("Default\t\tCipher");
+
+        for (Map.Entry<String, Boolean> cipher : ciphers.entrySet()) {
+
+            if (Boolean.TRUE.equals(cipher.getValue())) {
+                System.out.print("*");
+            } else {
+                System.out.print(" ");
+            }
+
+            System.out.print("\t\t");
+            System.out.println(cipher.getKey());
+        }
+    }
+}
+```

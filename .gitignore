@@ -1,0 +1,11 @@
+.couscous/
+bower_components/
+
+# Operating System Files
+*.DS_Store
+Thumbs.db
+*.sw?
+.#*
+*#
+*~
+*.sublime-*

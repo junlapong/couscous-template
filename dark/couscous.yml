@@ -1,0 +1,37 @@
+template:
+    directory: .
+
+baseUrl: ./
+
+github:
+    user: CouscousPHP
+    repo: Template-Dark
+
+title: Couscous template
+subTitle: The dark template for Couscous.
+
+# The left menu bar
+menu:
+    sections:
+        main:
+            name: Main documentation
+            items:
+                home:
+                    text: Home
+                    relativeUrl: ./
+                topup:
+                    text: Topup
+                    relativeUrl: ./api-topup.html
+                inquiry:
+                    text: Inquiry
+                    relativeUrl: ./api-inquiry.html
+                unregister:
+                    text: Unregister
+                    relativeUrl: ./api-unregister.html
+        other:
+            name: Other
+            items:
+                contactme:
+                    text: Contact me
+                    # Or absolute urls
+                    absoluteUrl: mailto:junlapong@gmail.com

@@ -1,0 +1,32 @@
+template:
+    directory: .
+
+baseUrl: ./
+
+github:
+    user: CouscousPHP
+    repo: Template-ReadTheDocs
+
+title: Krungsri e-Payment
+subTitle: Krungsri Direct Account Payment API
+
+# The left menu bar
+menu:
+    items:
+        home:
+            text: Home
+            # You can use relative urls
+            relativeUrl: ./
+        topup:
+            text: Topup
+            relativeUrl: ./api-topup.html
+        inquiry:
+            text: Inquiry
+            relativeUrl: ./api-inquiry.html
+        unregister:
+            text: Unregister
+            relativeUrl: ./api-unregister.html
+        contactme:
+            text: Contact me
+            # Or absolute urls
+            absoluteUrl: mailto:junlapong@gmail.com
